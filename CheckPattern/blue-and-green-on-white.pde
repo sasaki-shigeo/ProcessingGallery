@@ -14,8 +14,5 @@ for (int i = 0; i < 11; i++) {
     fill(0, 0, 255, 160);
     rect(0, 50 * i, width, 50);
     rect(50 * i, 0, 50, height);
-
   }
-  //rect(0, 50 * i, width, 50);
-  //rect(50 * i, 0, 50, height);
 }
