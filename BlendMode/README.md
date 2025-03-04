@@ -55,6 +55,27 @@ $$
 
 指定色 $A\cdot\alpha$ と背景色 $B$ の明るい方
 
+```Processing
+size(600, 600);
+
+translate(width/2, height/2);
+
+noStroke();
+
+background(#000000);
+blendMode(LIGHTEST);
+
+fill(#00ff00);
+circle(   0, -100, 300);
+
+fill(#ff0000);
+circle(-100,  100, 300);
+
+fill(#0000ff);
+circle( 100,  100, 300);
+```
+
+![blendMode(LIGHTEST)](LIGHTEST.png)
 ## DARKEST
 $$
 C = \min(A\cdot\alpha, B)
@@ -81,6 +102,28 @@ $$
 
 で計算していると思う。
 
+```Processing
+size(600, 600);
+
+translate(width/2, height/2);
+
+noStroke();
+
+background(#ffffff);
+blendMode(MULTIPLY);
+
+fill(#ffff00);
+circle(   0, -100, 300);
+
+fill(#ff00ff);
+circle(-100,  100, 300);
+
+fill(#00ffff);
+circle( 100,  100, 300);
+```
+
+![blendMode(MULTYPLY)](MULTIPLY.png)
+
 ## SCREEN
 `MULTIPLY` の補色。照明を重ねたような混色
 
@@ -89,6 +132,27 @@ C = 1 - (1-A)(1-\alpha)(1-B)
 $$
 
 で合ってると思う。
+
+```Processing
+size(600, 600);
+
+translate(width/2, height/2);
+noStroke();
+
+blendMode(SCREEN);
+background(#000000);
+
+fill(#00ff00);
+circle(   0, -100, 300);
+
+fill(#ff0000);
+circle(-100,  100, 300);
+
+fill(#0000ff);
+circle( 100,  100, 300);
+```
+
+![blend by SCREEN](SCREEN.png)
 
 ## REPLACE
 指定色で置き換える。アルファチャネル $\alpha$ も無視する。
